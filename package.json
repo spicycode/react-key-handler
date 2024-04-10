@@ -1,6 +1,6 @@
 {
   "name": "react-key-handler",
-  "version": "1.2.0-beta.3",
+  "version": "2.0-beta-1",
   "description": "React component to handle keyboard events",
   "homepage": "https://github.com/ayrton/react-key-handler",
   "author": {
@@ -11,24 +11,18 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ayrton/react-key-handler.git"
+    "url": "git://github.com/spicycode/react-key-handler.git"
   },
   "bugs": {
-    "url": "https://github.com/ayrton/react-key-handler/issues"
+    "url": "https://github.com/spicycode/react-key-handler/issues"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
-    "build": "npm run build:clean && npm run build:bundle && npm run build:flow",
+    "build": "npm run build:clean && npm run build:bundle",
     "build:clean": "rimraf dist",
     "build:bundle": "rollup -c",
-    "build:flow": "flow-copy-source lib dist/cjs",
-    "demo": "parcel ./demo/index.html",
-    "demo:build": "parcel build demo/index.html --out-dir demo/dist --public-url=/react-key-handler",
-    "demo:deploy": "npm run demo:build && gh-pages -d demo/dist",
-    "prepublish": "npm run build",
-    "test": "npm run test:lint && npm run test:unit && npm run test:flow",
-    "test:flow": "flow check",
+    "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint demo/ lib/ test/",
     "test:unit": "mocha"
   },
@@ -56,16 +50,12 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
-    "flow-bin": "^0.79.1",
-    "flow-copy-source": "^2.0.2",
-    "gh-pages": "^1.2.0",
     "jsdom": "^11.12.0",
     "mocha": "^5.2.0",
     "parcel-bundler": "^1.9.7",
     "prettier": "^1.14.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-syntax-highlighter": "^8.0.1",
+    "react": "^17",
+    "react-dom": "^17",
     "rimraf": "^2.6.2",
     "rollup": "^0.63.5",
     "rollup-plugin-babel": "^3.0.7",
@@ -76,10 +66,9 @@
     "sinon": "^6.1.4"
   },
   "peerDependencies": {
-    "react": "^16.2.0-0"
+    "react": "^17"
   },
   "dependencies": {
-    "eslint-plugin-flowtype": "^2.50.0",
     "exenv": "^1.2.0",
     "prop-types": "^15.6.2"
   }
